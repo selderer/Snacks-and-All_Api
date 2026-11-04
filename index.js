@@ -30,6 +30,8 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
     res.status(200).json(file.filename);
 })
 
-app.listen(8800, () => {
+const port = process.env.PORT || 8800;
+
+app.listen(port, () => {
     console.log("API is working")
 });
